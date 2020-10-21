@@ -1,0 +1,42 @@
+void setup()
+{
+  
+  
+  pinMode(8, OUTPUT);
+  pinMode(2, OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  long duration, inches, cm;
+  pinMode(7, OUTPUT);
+  digitalWrite(7,LOW);
+  delayMicroseconds(2);
+  digitalWrite(7,HIGH);
+  delayMicroseconds(2);
+  digitalWrite(7,LOW);
+  pinMode(7, INPUT);
+  duration=pulseIn(7,HIGH);
+  
+  cm = (duration/2) / 29.1;     // Divide by 29.1 or multiply by 0.0343
+  inches = (duration/2) / 74;  
+  
+  Serial.println(cm);
+  
+  if(cm<=332 && cm>=0)
+  {
+    digitalWrite(2,LOW);
+    digitalWrite(8,HIGH);
+  }
+  else
+    {
+    digitalWrite(8,LOW);
+    digitalWrite(2,HIGH);
+  }
+  
+  //digitalWrite(8, LOW);
+  //delay(1000); // Wait for 1000 millisecond(s)
+  //digitalWrite(13, LOW);
+  //delay(1000); // Wait for 1000 millisecond(s)
+}
