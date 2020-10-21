@@ -1,0 +1,6 @@
+Name,Quantity,Component
+"U1",1," Arduino Uno R3"
+"R1, R2",2,"1 kΩ Resistor"
+"D2",1,"Red LED"
+"D3",1,"Green LED"
+"PING1",1," Ultrasonic Distance Sensor"
